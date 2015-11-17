@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ascii_charts (0.9.1)
+    sparkr (0.4.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  ascii_charts
+  sparkr
+
+BUNDLED WITH
+   1.10.6

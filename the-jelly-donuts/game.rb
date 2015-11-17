@@ -12,8 +12,8 @@ class Game
       puts "#{@number} / 3 = #{@number / 3}"
       @number /= 3
     elsif mod == 2
-      puts "#{@number} + 2 = #{@number + 2}"
-      @number += 2
+      puts "#{@number} + 1 = #{@number + 1}"
+      @number += 1
     else
       puts "#{@number} - 1 = #{@number - 1}"
       @number -= 1

@@ -1,4 +1,3 @@
-require 'pry'
 
 class Three
   attr_accessor :number

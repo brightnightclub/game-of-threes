@@ -27,7 +27,7 @@ class Game
       @number -= 1
     end
 
-    note = (@number % 200) + 64
+    note = (@number % 64) + 64
     play_it note
 
     find_next

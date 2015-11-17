@@ -2,4 +2,4 @@
 
 require_relative 'cli'
 
-CLI.start
+CLI.start(ARGV[0].to_i)

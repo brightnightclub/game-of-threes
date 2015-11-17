@@ -5,6 +5,7 @@ include MIDI
 class Game
   def initialize(number)
     @number = number
+    `say "the number is #{@number}"`
     puts number
 
     @seq = Sequence.new()
@@ -34,7 +35,8 @@ class Game
 
   def find_next
     if @number == 1
-      output_file
+      play_it
+      `say "and now my musical interpretation"`
       return 1
     end
 
@@ -42,21 +44,27 @@ class Game
     if mod == 0
       puts "#{@number} / 3 = #{@number / 3}"
       @number /= 3
+      `say "divided by 3"`
     elsif mod == 2
       puts "#{@number} + 1 = #{@number + 1}"
       @number += 1
+      `say "plus one"`
     else
       puts "#{@number} - 1 = #{@number - 1}"
       @number -= 1
+      `say "minus one"`
     end
 
-    @track.events << NoteOn.new(0, @number, 127, 0)
-    @track.events << NoteOff.new(0, @number, 127, @quarter_note_length)
+    note = (@number + 32) % 200
+    @track.events << NoteOn.new(0, note, 127, 0)
+    @track.events << NoteOff.new(0, note, 127, @quarter_note_length)
+    `say #{@number}`
 
     find_next
   end
 
-  def output_file
+  def play_it
     File.open('jelly_donut.mid', 'wb') { |file| @seq.write(file) }
   end
+
 end
